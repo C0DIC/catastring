@@ -37,19 +37,19 @@ CataStr castr_from_cstr(char *cstr);
 // Trim string from left while cf
 //
 // Usage example:
-// castr_ltrim(CS("    Hello!"), ' ');
+// castr_ltrim(' ', CS("    Hello!"));
 CataStr castr_ltrim(char cf, CataStr cs);
 
 // Trim string from right while cf
 //
 // Usage example:
-// castr_ltrim(CS(' ', "Hello!    "));
+// castr_ltrim(' ', CS("Hello!    "));
 CataStr castr_rtrim(char cf, CataStr cs);
 
 // Trim string from left & right while cf
 //
 // Usage example:
-// castr_trim(CS('#', "####Hello!####"))
+// castr_trim('#', CS("####Hello!####"))
 CataStr castr_trim(char cf, CataStr cs);
 
 // Compare two CataStrings
