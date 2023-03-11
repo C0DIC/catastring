@@ -1,5 +1,5 @@
 //
-//      cstring.h
+//      catastring.h
 //      Created by C0DIC, 11/03/2023
 //
 //      Main CataString header file
