@@ -19,7 +19,7 @@
 // Macro for castr_from_cstr(char *cstr)
 #define CS(cstr) castr_from_cstr(cstr)
 #define CS_LEN(catastr) (int)  catastr.length
-#define CS_FMT(catastr) (char*)catastr.data
+#define CS_FMT(catastr) (const char*)catastr.data
 
 // CataString structure
 //
@@ -28,11 +28,11 @@
 typedef struct 
 {
     size_t length;
-    char *data;
+    const char *data;
 } CataStr;
 
 // Make cata string from cstr
-CataStr castr_from_cstr(char *cstr);
+CataStr castr_from_cstr(const char *cstr);
 
 // Trim string from left while cf
 //
@@ -74,10 +74,10 @@ CataStr castr_cutc(char cf, CataStr cs);
 CataStr castr_cat(CataStr cs_1, CataStr cs_2);
 
 // Rerturns true (1) if starts with prefix, otherwise false (0)
-bool castr_startswith(char *prefix, CataStr cs);
+bool castr_startswith(const char *prefix, CataStr cs);
 
 // Rerturns true (1) if ends with suffix, otherwise false (0)
-bool castr_endswith(char *suffix, CataStr cs);
+bool castr_endswith(const char *suffix, CataStr cs);
  
 // If CataString isdigit() returns long long from it, otherwise returns 0
 long long castr_to_lld(CataStr cs);

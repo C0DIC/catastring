@@ -1,6 +1,6 @@
 #include "catastring.h"
 
-CataStr castr_from_cstr(char *cstr) {
+CataStr castr_from_cstr(const char *cstr) {
     assert (cstr != NULL && "ERROR: can't make string from NULL");
 
     return (CataStr) {
@@ -27,7 +27,7 @@ CataStr castr_rtrim(char cf, CataStr cs) {
         pos++;
     }
 
-    char *new_data = (char*)malloc(cs.length + 1);
+    char *new_data = (const char*)malloc(cs.length + 1);
     memcpy(new_data, cs.data, cs.length - pos);
 
     return (CataStr) {
@@ -86,7 +86,7 @@ CataStr castr_cat(CataStr cs_1, CataStr cs_2) {
     return CS(new_data);
 }
 
-bool castr_startswith(char *prefix, CataStr cs) {
+bool castr_startswith(const char *prefix, CataStr cs) {
     size_t pos = 0;
     size_t prefix_length = strlen(prefix);
 
@@ -105,7 +105,7 @@ bool castr_startswith(char *prefix, CataStr cs) {
     return false;
 }
 
-bool castr_endswith(char *suffix, CataStr cs) {
+bool castr_endswith(const char *suffix, CataStr cs) {
     size_t suffix_length = strlen(suffix);
 
     if (suffix_length <= cs.length) {
