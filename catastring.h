@@ -74,10 +74,10 @@ CataStr castr_cutc(char cf, CataStr cs);
 CataStr castr_cat(CataStr cs_1, CataStr cs_2);
 
 // Rerturns true (1) if starts with prefix, otherwise false (0)
-bool castr_startswith(const char *prefix, CataStr cs);
+bool castr_startswith(char *prefix, CataStr cs);
 
 // Rerturns true (1) if ends with suffix, otherwise false (0)
-bool castr_endswith(const char *suffix, CataStr cs);
+bool castr_endswith(char *suffix, CataStr cs);
  
 // If CataString isdigit() returns long long from it, otherwise returns 0
 long long castr_to_lld(CataStr cs);

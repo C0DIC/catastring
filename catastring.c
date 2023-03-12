@@ -86,7 +86,7 @@ CataStr castr_cat(CataStr cs_1, CataStr cs_2) {
     return CS(new_data);
 }
 
-bool castr_startswith(const char *prefix, CataStr cs) {
+bool castr_startswith(char *prefix, CataStr cs) {
     size_t pos = 0;
     size_t prefix_length = strlen(prefix);
 
@@ -105,7 +105,7 @@ bool castr_startswith(const char *prefix, CataStr cs) {
     return false;
 }
 
-bool castr_endswith(const char *suffix, CataStr cs) {
+bool castr_endswith(char *suffix, CataStr cs) {
     size_t suffix_length = strlen(suffix);
 
     if (suffix_length <= cs.length) {
