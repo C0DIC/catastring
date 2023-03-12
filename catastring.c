@@ -62,6 +62,28 @@ int castr_index_of(char cf, CataStr cs) {
     return pos;
 }
 
+CataStr castr_untilc(char cf, CataStr cs) {
+    int pos = castr_index_of(cf, cs);
+
+    if (pos == -1) {
+        return (CataStr) {
+            .data = "",
+            .length = 0
+        };
+    } else {
+        char *new_data = (char*)malloc(pos + 1);
+
+        for (size_t i = 0; i < pos; i++) {
+            new_data[i] = cs.data[i];
+        }
+
+        return (CataStr) {
+            .data = new_data,
+            .length = pos
+        };
+    }
+}
+
 CataStr castr_cutc(char cf, CataStr cs) {
     int pos = castr_index_of(cf, cs);
 

@@ -70,6 +70,10 @@ int castr_index_of(char cf, CataStr cs);
 // If character not in str, returns empty CataString
 CataStr castr_cutc(char cf, CataStr cs);
 
+// Returns CataString until character from left
+// If character not in str, returns empty CataString
+CataStr castr_untilc(char cf, CataStr cs);
+
 // Concatenate two CataStrings
 CataStr castr_cat(CataStr cs_1, CataStr cs_2);
 
