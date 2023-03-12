@@ -28,7 +28,7 @@
 typedef struct 
 {
     size_t length;
-    const char *data;
+    char *data;
 } CataStr;
 
 // Make cata string from cstr
