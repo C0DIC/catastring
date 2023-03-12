@@ -19,7 +19,7 @@
 // Macro for castr_from_cstr(char *cstr)
 #define CS(cstr) castr_from_cstr(cstr)
 #define CS_LEN(catastr) (int)  catastr.length
-#define CS_FMT(catastr) (const char*)catastr.data
+#define CS_FMT(catastr) (char*)catastr.data
 
 // CataString structure
 //
@@ -32,7 +32,7 @@ typedef struct
 } CataStr;
 
 // Make cata string from cstr
-CataStr castr_from_cstr(const char *cstr);
+CataStr castr_from_cstr(char *cstr);
 
 // Trim string from left while cf
 //
