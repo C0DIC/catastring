@@ -74,6 +74,10 @@ CataStr castr_cutc(char cf, CataStr cs);
 // If character not in str, returns empty CataString
 CataStr castr_untilc(char cf, CataStr cs);
 
+// Returns CataString until the character is Alpha (a-z, A-Z)
+// If no alpha in str, returns empty CataString
+CataStr castr_walpha(CataStr cs);
+
 // Concatenate two CataStrings
 CataStr castr_cat(CataStr cs_1, CataStr cs_2);
 
