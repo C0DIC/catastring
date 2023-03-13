@@ -1,4 +1,5 @@
 #include "catastring.h"
+#include <stdio.h>
 
 CataStr castr_from_cstr(char *cstr) {
     assert (cstr != NULL && "ERROR: can't make string from NULL");
@@ -95,6 +96,15 @@ CataStr castr_cutc(char cf, CataStr cs) {
             .length = cs.length - pos - 1
         };
     }
+}
+
+CataStr castr_cut_by(size_t num, CataStr cs) {
+    assert(num < cs.length && "ERROR: number must be less than length (or equal)");
+
+    return (CataStr) {
+        .data = cs.data + num,
+        .length = cs.length - num
+    };
 }
 
 CataStr castr_walpha(CataStr cs) {

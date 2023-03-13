@@ -70,6 +70,9 @@ int castr_index_of(char cf, CataStr cs);
 // If character not in str, returns same CataString
 CataStr castr_cutc(char cf, CataStr cs);
 
+// Cut CataString by the number
+CataStr castr_cut_by(size_t num, CataStr cs);
+
 // Returns CataString until character from left
 // If character not in str, returns empty CataString
 CataStr castr_untilc(char cf, CataStr cs);
