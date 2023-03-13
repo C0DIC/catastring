@@ -94,8 +94,8 @@ CataStr castr_cutc(char cf, CataStr cs) {
         };
     } else {
         return (CataStr) {
-            .data = cs.data + pos,
-            .length = cs.length - pos
+            .data = cs.data + pos + 1,
+            .length = cs.length - pos - 1
         };
     }
 }
