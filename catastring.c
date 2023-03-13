@@ -98,7 +98,7 @@ CataStr castr_cutc(char cf, CataStr cs) {
 }
 
 CataStr castr_cut_by(size_t num, CataStr cs) {
-    assert(num < cs.length && "ERROR: number must be less than length (or equal)");
+    assert(num <= cs.length && "ERROR: number must be less than length (or equal)");
 
     return (CataStr) {
         .data = cs.data + num,
