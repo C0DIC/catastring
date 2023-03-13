@@ -110,12 +110,12 @@ CataStr castr_walpha(CataStr cs) {
     }
 
     if (pos != 0) {
-        char *new_data = (char*)malloc(cs.length + 1);
+        char *new_data = (char*)malloc(pos + 1);
         memcpy(new_data, cs.data, pos);
 
         return (CataStr) {
             .data = new_data,
-            .length = cs.length - pos
+            .length = pos
         };
     } else {
         return (CataStr) {
