@@ -67,7 +67,7 @@ bool castr_has(char cf, CataStr cs);
 int castr_index_of(char cf, CataStr cs);
 
 // Cut CataString to the character if char in str
-// If character not in str, returns empty CataString
+// If character not in str, returns same CataString
 CataStr castr_cutc(char cf, CataStr cs);
 
 // Returns CataString until character from left

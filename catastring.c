@@ -88,10 +88,7 @@ CataStr castr_cutc(char cf, CataStr cs) {
     int pos = castr_index_of(cf, cs);
 
     if (pos == -1) {
-        return (CataStr) {
-            .data = "",
-            .length = 0
-        };
+        return cs;
     } else {
         return (CataStr) {
             .data = cs.data + pos + 1,
