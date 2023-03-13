@@ -1,5 +1,4 @@
 #include "catastring.h"
-#include <stdio.h>
 
 CataStr castr_from_cstr(char *cstr) {
     assert (cstr != NULL && "ERROR: can't make string from NULL");
