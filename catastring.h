@@ -81,6 +81,10 @@ CataStr castr_untilc(char cf, CataStr cs);
 // If no alpha in str, returns empty CataString
 CataStr castr_walpha(CataStr cs);
 
+// Returns CataString until the character is Digit (0-9)
+// If no digit in str, returns empty CataString
+CataStr castr_wdigit(CataStr cs);
+
 // Concatenate two CataStrings
 CataStr castr_cat(CataStr cs_1, CataStr cs_2);
 

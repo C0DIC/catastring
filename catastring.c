@@ -1,4 +1,5 @@
 #include "catastring.h"
+#include <stdio.h>
 
 CataStr castr_from_cstr(char *cstr) {
     assert (cstr != NULL && "ERROR: can't make string from NULL");
@@ -111,6 +112,31 @@ CataStr castr_walpha(CataStr cs) {
 
     if (isalpha(cs.data[pos])) {
         while (isalpha(cs.data[pos])) {
+            pos += 1;
+        }
+    }
+
+    if (pos != 0) {
+        char *new_data = (char*)malloc(pos + 1);
+        memcpy(new_data, cs.data, pos);
+
+        return (CataStr) {
+            .data = new_data,
+            .length = pos
+        };
+    } else {
+        return (CataStr) {
+            .data = "",
+            .length = 0
+        };
+    }
+}
+
+CataStr castr_wdigit(CataStr cs) {
+    size_t pos = 0;
+
+    if (isdigit(cs.data[pos])) {
+        while (isdigit(cs.data[pos])) {
             pos += 1;
         }
     }
