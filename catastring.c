@@ -4,9 +4,15 @@
 CataStr castr_from_cstr(char *cstr) {
     assert (cstr != NULL && "ERROR: can't make string from NULL");
 
+    size_t len = strlen(cstr);
+    char* data = (char*)malloc(len + 1);
+
+    memcpy(data, cstr, len);
+    data[len] = 0;
+
     return (CataStr) {
-        .data = cstr,
-        .length = strlen(cstr),
+        .data = data,
+        .length = len,
     };
 }
 
