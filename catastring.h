@@ -97,5 +97,4 @@ bool castr_endswith(char *suffix, CataStr cs);
 // If CataString isdigit() returns long long from it, otherwise returns 0
 long long castr_to_lld(CataStr cs);
 
-
 #endif /*CATA_STRING*/

@@ -142,7 +142,7 @@ CataStr castr_wdigit(CataStr cs) {
     size_t pos = 0;
 
     if (isdigit(cs.data[pos])) {
-        while (isdigit(cs.data[pos])) {
+        while (isdigit(cs.data[pos]) || cs.data[pos] == '.') {
             pos += 1;
         }
     }
