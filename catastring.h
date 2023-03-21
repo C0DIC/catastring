@@ -19,7 +19,8 @@
 // Macro for castr_from_cstr(char *cstr)
 #define CS(cstr) castr_from_cstr(cstr)
 #define CS_LEN(catastr) (int)  catastr.length
-#define CS_FMT(catastr) (char*)catastr.data
+#define CS_FMT(catastr) (int)catastr.length, (char*)catastr.data
+#define CS_PRI "%.*s"
 
 // CataString structure
 //
@@ -74,7 +75,7 @@ CataStr castr_cutc(char cf, CataStr cs);
 CataStr castr_cut_by(size_t num, CataStr cs);
 
 // Returns CataString until character from left
-// If character not in str, returns empty CataString
+// If character not in str, returns same CataString
 CataStr castr_untilc(char cf, CataStr cs);
 
 // Returns CataString until the character is Alpha (a-z, A-Z)

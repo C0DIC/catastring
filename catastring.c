@@ -55,7 +55,7 @@ bool castr_same(CataStr cs_1, CataStr cs_2) {
 }
 
 bool castr_has(char cf, CataStr cs) {
-    if (strrchr(CS_FMT(cs), cf) != NULL)
+    if (strrchr(cs.data, cf) != NULL)
         return true;
     else return false;
 }
@@ -73,10 +73,7 @@ CataStr castr_untilc(char cf, CataStr cs) {
     int pos = castr_index_of(cf, cs);
 
     if (pos == -1) {
-        return (CataStr) {
-            .data = "",
-            .length = 0
-        };
+        return cs;
     } else {
         char *new_data = (char*)malloc(pos + 1);
 
